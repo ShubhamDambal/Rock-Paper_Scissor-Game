@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <title>Rock-Paper-Scissor</title>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+
+    <button class="move-button js-rock-button">
+      <img src="images/Rock-emoji.png" class="move-icon">
+    </button>
+    
+    <button class="move-button js-paper-button">
+      <img src="images/Paper-emoji.png" class="move-icon ">
+    </button>
+
+    <button class="move-button js-scissor-button">
+      <img src="images/Scissor-emoji.png" class="move-icon">
+    </button>
+
+    <!--for below 3 eventListener added instead of onclick-->
+    <p class="js-result result"></p>
+    <p class="js-moves moves"></p>
+    <p class="js-score score"></p>
+
+    <button class="reset-button" onclick="score.wins = 0;
+                     score.losses = 0;
+                     score.ties = 0;
+                     localStorage.removeItem('score');
+                     updateScoreElement();"> 
+      Reset Score
+    </button>
+ 
+    <button class="auto-play-button" onclick="autoPlay();"> 
+      Auto Play
+    </button>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
