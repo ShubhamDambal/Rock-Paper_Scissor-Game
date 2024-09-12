@@ -2,6 +2,7 @@ body{
   background-color: #191919;
   color: white;
   font-family: Arial;
+  padding-left: 50px;
 }
 
 .title{
@@ -42,4 +43,23 @@ body{
 
 .score{
   margin-top: 60px;
+}
+
+.yes-button, .no-button{
+  border: none;
+  font-size: 17px;
+  padding: 8px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.reset-confirm{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #2f2f2f;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
