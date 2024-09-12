@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
+    <!--Adding event listeners instead of onclick-->
+
   <body>
     <p class="title">Rock Paper Scissors</p>
 
@@ -26,15 +28,13 @@
     <p class="js-moves moves"></p>
     <p class="js-score score"></p>
 
-    <button class="reset-button" onclick="score.wins = 0;
-                     score.losses = 0;
-                     score.ties = 0;
-                     localStorage.removeItem('score');
-                     updateScoreElement();"> 
+    <button class="reset-button js-reset-button"> 
       Reset Score
     </button>
+
+    <div class="reset-confirm"></div>
  
-    <button class="auto-play-button" onclick="autoPlay();"> 
+    <button class="auto-play-button js-auto-play-button"> 
       Auto Play
     </button>
 
