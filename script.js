@@ -143,71 +143,14 @@ function pickComputerMove() {
   let computerMove = '';
   let randomVal = Math.random();  //pick any value between 0 and 1
 
-  if (randomVal > 0 && randomVal <= 1 / 3) {
-    computerMove = 'Rock';
-  }
-  else if (randomVal > 1 / 3 && randomVal <= 2 / 3) {
-    computerMove = 'Paper';
-  }
-  else {
-    computerMove = 'Scissor';
-  }
-  return computerMove;
-}
-
-//Adding event listeners
-document.querySelector('.js-reset-button').addEventListener('click', () => {
-  // Update the click event listener to
-  // show the confirmation message instead
-  // of restting the score immediately.
-  showResetConfirmation();
-});
-
-let isAutoPlaying = false;   //to check autoPlay is on or off
-let intervalId;     //to store id of setInterval()
-
-document.querySelector('.js-auto-play-button').addEventListener('click', () => {
-  if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
-      const playerMove = pickComputerMove();
-      playGame(playerMove);
-    }, 1000);
-    isAutoPlaying = true;
-
-    document.querySelector('.auto-play-button').innerText = 'Stop Play';
-  }
-  else {
-    //stop the setInterval
-    clearInterval(intervalId);
-    isAutoPlaying = false;
-
-    document.querySelector('.auto-play-button').innerText = 'Auto Play';
-  }
-});
-
-function autoPlay() {
-  if (!isAutoPlaying) {
-    intervalId = setInterval(function () {
-      const playerMove = pickComputerMove();
-      playGame(playerMove);
-    }, 1000);
-    isAutoPlaying = true;
-
-    document.querySelector('.auto-play-button').innerText = 'Stop Play';
-  }
-  else {
-    //stop the setInterval
-    clearInterval(intervalId);
-    isAutoPlaying = false;
-
-    document.querySelector('.auto-play-button').innerText = 'Auto Play';
-  }
-}
-
-function resetScore(){
-  score.wins = 0;
-  score.losses = 0;
-  score.ties = 0;
-  localStorage.removeItem('score');
-  updateScoreElement();
-}
+        if(randomVal>0 && randomVal<=1/3){
+          computerMove = 'Rock';
+        }
+        else if(randomVal>1/3 && randomVal<=2/3){
+          computerMove = 'Paper';
+        }
+        else{
+          computerMove = 'Scissor';
+        }
+        return computerMove;
+      } 
